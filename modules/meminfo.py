@@ -53,6 +53,8 @@ class meminfo():
         
         while not self.Is_app_running():
 #             print '....wait_for_app()'
+            if not self.adb.device():
+                print 'Device disconnected.'
             sleep(1)
             
     def app_meminfo_preocessor(self):                
